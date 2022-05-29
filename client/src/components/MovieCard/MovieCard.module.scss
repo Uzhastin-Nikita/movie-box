@@ -1,0 +1,50 @@
+@import 'src/scss/mixins';
+
+.movieCard {
+  @include FlexBetweenRow;
+  background: $color-background-secondary;
+  border: 1px solid $color-border-third;
+  border-radius: $border-radius;
+  padding: 20px;
+  animation: movie-card 1s ease-in-out;
+  margin-bottom: 20px;
+
+  &__image {
+    max-width: 100px;
+    min-width: 100px;
+    height: auto;
+    max-height: 200px;
+    margin-right: 20px;
+    overflow: hidden;
+    border-radius: $border-radius;
+
+    & > img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__content {
+    @include FlexBetweenColumn;
+
+    &__description {
+      margin: 20px 0;
+    }
+
+    &__cinemas {
+      font-size: $font-size-small;
+      color: $color-link-text;
+    }
+  }
+}
+
+@keyframes movie-card {
+  0% {
+    opacity: 0;
+    transform: translateY(-30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
